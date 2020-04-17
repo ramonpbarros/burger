@@ -1,12 +1,82 @@
-<h1>Eat-Da-Burger</h1>
+<div class="container">
+  <div style="margin:0 auto; width:200px;display:block; padding-top: 3em;">
+    <img src="
+  https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTya8czq4HxN2YGQwbp7yLTY3OEM7s2SR9Rhmwm8-f9YT-gUcjd&usqp=CAU"
+      alt="burger">
+  </div>
 
-<h3>Save Wishes</h3>
+  <h2 style="color: red; text-align: center;">Eat-Da-Burger</h2>
 
-<ul>
   {{#each burgers}}
-  <li>
-    <p>ID: {{id}}</p>
-    <p>Burger: {{burger_name}}</p>
-  </li>
+  {{#if devoured}}
+  <div class="col-4" style="float: right;">
+    <ul class="list-group">
+      <li class=" list-group-item disabled">
+        <p>{{id}}. {{burger_name}}</p>
+      </li>
+    </ul>
+  </div>
+  {{else}}
+  <div class="col-4">
+    <ul class="list-group" style="float: left;">
+      <li class=" list-group-item">
+        <p>{{id}}. {{burger_name}} &nbsp;&nbsp; <button data-burgerid="{{this.id}}" type=" submit"
+            class="btn btn-primary" id="devourBtn">Devour
+            it!</button></p>
+      </li>
+      <br>
+    </ul>
+  </div>
+  {{/if}}
   {{/each}}
-</ul>
+  <br>
+
+  <div style="margin: 0 auto;width:200px;display:block; padding-bottom: 3em;">
+    <form>
+      <div class="form-group">
+        <textarea type="text" class="form-control" name="burger" id="inputBurger"></textarea>
+        <small id="btnHelp" class="form-text text-muted">Enter a burger you want to eat and Click the "Submit"
+          button.</small>
+      </div>
+      <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+{{!-- <script>
+ // $("#submitBtn").on("submit", function (event) {
+ //   event.preventDefault();
+
+    // [name=plan] will find an element with a "name" attribute equal to the string "plan"
+ //   let newBurger = {
+ //     burger: $("#submitBtn [name=burger]").val().trim()
+    };
+
+  // $.ajax("/api/burgers", {
+  type: "POST",
+  //    data: newBurger
+    }).then(
+    function () {
+      //      console.log("created new burger");
+      //     location.reload();
+    }
+  );
+  });
+
+  //$("#devourBtn").on("submit", function (event) {
+  //  event.preventDefault();
+
+  //  let id = $(this).data("burgerid");
+
+  //$.ajax("/api/burgers/" + id, {
+  type: "PUT",    
+    }).then(
+    function () {
+      //console.log("updated id ", id);
+      //location.reload();
+    }
+  );
+  });
+</script> --}}

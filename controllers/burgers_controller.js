@@ -8,4 +8,11 @@ router.get("/", (req, res) => {
   });
 });
 
+router.post("/api/burgers", (req, res) => {
+  const newBurger = req.body.burger_name;
+  burger.create(newBurger, (result) => {
+    res.json(result);
+  });
+});
+
 module.exports = router;

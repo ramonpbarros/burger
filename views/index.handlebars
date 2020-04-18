@@ -7,30 +7,6 @@
 
   <h2 style="color: red; text-align: center;">Eat-Da-Burger</h2>
 
-  {{#each burgers}}
-  {{#if devoured}}
-  <div class="col-4" style="float: right;">
-    <ul class="list-group">
-      <li class=" list-group-item disabled">
-        <p>{{id}}. {{burger_name}}</p>
-      </li>
-    </ul>
-  </div>
-  {{else}}
-  <div class="col-4">
-    <ul class="list-group" style="float: left;">
-      <li class=" list-group-item">
-        <p>{{id}}. {{burger_name}} &nbsp;&nbsp; <button data-burgerid="{{this.id}}" type=" submit"
-            class="btn btn-primary devourBtn">Devour
-            it!</button></p>
-      </li>
-      <br>
-    </ul>
-  </div>
-  {{/if}}
-  {{/each}}
-  <br>
-
   <div style="margin: 0 auto;width:200px;display:block; padding-bottom: 3em;">
     <form class="create-form">
 
@@ -43,6 +19,32 @@
       <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
 
     </form>
+  </div>
+
+  <div class="container col-4" style="margin: 0;float: left;">
+    {{#each burgers}}
+    {{#if devoured}}
+    <ul class=" list-group">
+      <li class=" list-group-item disabled">
+        <p>{{id}}. {{burger_name}}</p>
+      </li>
+    </ul>
+    {{/if}}
+    {{/each}}
+  </div>
+
+  <div class="container col-4" style="margin-right: 0;">
+    {{#each burgers}}
+    {{#unless devoured}}
+    <ul class="list-group">
+      <li class=" list-group-item">
+        <p>{{id}}. {{burger_name}} &nbsp;&nbsp; <button data-burgerid="{{this.id}}" type=" submit"
+            class="btn btn-primary devourBtn">Devour
+            it!</button></p>
+      </li>
+    </ul>
+    {{/unless}}
+    {{/each}}
   </div>
 </div>
 

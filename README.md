@@ -21,7 +21,7 @@ Whenever a user submits a burger's name, the app display the burger on the right
 
 ## Screenshots
 
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./public/assets/img/project.gif)
 
 ## Technologies
 

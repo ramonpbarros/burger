@@ -21,7 +21,7 @@
     <ul class="list-group" style="float: left;">
       <li class=" list-group-item">
         <p>{{id}}. {{burger_name}} &nbsp;&nbsp; <button data-burgerid="{{this.id}}" type=" submit"
-            class="btn btn-primary" id="devourBtn">Devour
+            class="btn btn-primary devourBtn">Devour
             it!</button></p>
       </li>
       <br>
@@ -33,23 +33,23 @@
 
   <div style="margin: 0 auto;width:200px;display:block; padding-bottom: 3em;">
     <form class="create-form">
+
       <div class="form-group">
-        <textarea type="text" class="form-control" name="burger" id="inputBurger"></textarea>
+        <input type="text" class="form-control" name="burger" id="inputBurger"></input>
         <small id="btnHelp" class="form-text text-muted">Enter a burger you want to eat and Click the "Submit"
           button.</small>
       </div>
+
       <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+
     </form>
   </div>
 </div>
-
-
 
 {{!-- <script>
  // $("#submitBtn").on("submit", function (event) {
  //   event.preventDefault();
 
-    // [name=plan] will find an element with a "name" attribute equal to the string "plan"
  //   let newBurger = {
  //     burger: $("#submitBtn [name=burger]").val().trim()
     };

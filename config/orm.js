@@ -17,6 +17,18 @@ const orm = {
       cb(data);
     });
   },
+  update: (table, updateValues, condition, cb) => {
+    connection.query(
+      "UPDATE ?? SET ? WHERE ?",
+      [table, updateValues, condition],
+      (err, result) => {
+        if (err) {
+          throw err;
+        }
+        cb(result);
+      }
+    );
+  },
 };
 
 module.exports = orm;

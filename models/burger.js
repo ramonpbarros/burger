@@ -4,8 +4,15 @@ const burger = {
   all: (cb) => {
     orm.selectAll("burgers", cb);
   },
-  create: (burger_name, cb) => {
-    orm.createOne("burgers", { burger_name }, cb);
+  create: (newBurger, cb) => {
+    orm.createOne("burgers", newBurger, (res) => {
+      cb(res);
+    });
+  },
+  update: (burgerData, condition, cb) => {
+    orm.update("burgers", burgerData, condition, (res) => {
+      cb(res);
+    });
   },
 };
 
